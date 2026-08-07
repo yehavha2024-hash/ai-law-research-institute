@@ -27,6 +27,9 @@ const archiveItems = [
   { type: "WORKING PAPER", date: "2026. 02", title: "기능적 단위로서 AI의 법적 지위에 관한 시론" },
 ];
 
+const researcherProfileImage =
+  "https://raw.githubusercontent.com/yehavha2024-hash/ai-law-research-institute/master/images/researcher-profile.png?v=20260808";
+
 export default function Home() {
   return (
     <main>
@@ -87,7 +90,23 @@ export default function Home() {
       <section className="profile section">
         <div className="section-label">03 / PEOPLE & PROJECTS</div>
         <div className="profile-grid">
-          <div className="portrait" role="img" aria-label="대표 연구자 프로필 이미지 자리"><span>대표 연구자</span><strong>PROFILE</strong></div>
+          <div className="portrait" aria-label="대표 연구자 프로필 이미지" style={{ padding: 0, background: "#071d37" }}>
+            <img
+              src={researcherProfileImage}
+              alt="AI 법률연구소 대표 연구자 프로필"
+              loading="eager"
+              referrerPolicy="no-referrer"
+              style={{
+                width: "100%",
+                height: "100%",
+                objectFit: "cover",
+                objectPosition: "center top",
+                display: "block",
+                position: "relative",
+                zIndex: 2,
+              }}
+            />
+          </div>
           <div className="profile-copy">
             <span className="overline">FOUNDER & DIRECTOR</span>
             <h2>법학의 언어로<br />AI 시대의 질서를 연구합니다.</h2>
