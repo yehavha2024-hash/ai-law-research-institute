@@ -14,7 +14,7 @@
     "branch": "master",
     "rootDirectory": ".",
     "framework": "None",
-    "buildCommand": "exit 0",
-    "outputDirectory": "."
+    "buildCommand": "node scripts/build-pages.mjs",
+    "outputDirectory": "dist"
   }
 }
