@@ -1,0 +1,4 @@
+AI LAW RESEARCH INSTITUTE
+Deployment refresh: 2026-08-07
+Canonical source: master/index.html + style.css + script.js
+Build: node scripts/build-pages.mjs -> dist
