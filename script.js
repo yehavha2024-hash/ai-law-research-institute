@@ -14,6 +14,23 @@ navigation?.addEventListener('click', (event) => {
 });
 
 (() => {
+  const profileImage = document.querySelector('.researcher-visual img');
+  if (!profileImage) return;
+
+  const absoluteProfileSource = 'https://raw.githubusercontent.com/yehavha2024-hash/ai-law-research-institute/master/images/researcher-profile.png';
+
+  profileImage.referrerPolicy = 'no-referrer';
+  profileImage.decoding = 'async';
+  profileImage.loading = 'eager';
+  profileImage.src = absoluteProfileSource;
+
+  profileImage.addEventListener('error', () => {
+    profileImage.removeAttribute('srcset');
+    profileImage.src = `${absoluteProfileSource}?v=20260808`;
+  }, { once: true });
+})();
+
+(() => {
   const footer = document.querySelector('body > footer');
   if (!footer) return;
   if (!document.getElementById('top')) document.body.id = 'top';
