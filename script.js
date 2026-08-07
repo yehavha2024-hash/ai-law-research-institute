@@ -40,8 +40,8 @@ navigation?.addEventListener('click', (event) => {
       --ui-h1:clamp(42px,5vw,64px);
       --ui-h2:clamp(30px,3.5vw,40px);
       --ui-h3:20px;
-      --ui-body:15px;
-      --ui-small:12px;
+      --ui-body:16px;
+      --ui-small:13px;
       --ui-label:10px;
     }
     html,body,button,input,select,textarea{font-family:var(--ui-font)!important}
@@ -65,58 +65,62 @@ navigation?.addEventListener('click', (event) => {
     .eyebrow,.panel-label,.project-meta span,.archive-card>span{font-family:var(--ui-font)!important;font-size:var(--ui-label)!important;font-weight:800!important;letter-spacing:.15em!important}
     .hero h1{font-family:var(--ui-font)!important;font-size:var(--ui-h1)!important;font-weight:780!important;line-height:1.17!important;letter-spacing:-.045em!important}
     .hero h1 em{font-weight:650!important}
-    .lead{font-size:16px!important;line-height:1.9!important;max-width:740px!important;margin-top:26px!important}
+    .lead{font-size:17px!important;line-height:1.9!important;max-width:740px!important;margin-top:26px!important}
     .hero-panel strong{font-size:21px!important;font-weight:750!important;line-height:1.5!important;letter-spacing:-.025em!important}
-    .hero-panel>p:last-child{font-size:13px!important;line-height:1.8!important}
+    .hero-panel>p:last-child{font-size:14px!important;line-height:1.82!important}
     .principle-line{margin-top:54px!important}
-    .principle-line span{font-size:12px!important;line-height:1.6!important}
+    .principle-line span{font-size:13px!important;line-height:1.65!important}
 
     .section{padding:88px 0!important}
     .split-heading,.standards-grid{grid-template-columns:250px minmax(0,1fr)!important;gap:64px!important}
     .split-heading h2,.section-head h2,.researcher-copy h2,.standards-grid h2{font-family:var(--ui-font)!important;font-size:var(--ui-h2)!important;font-weight:760!important;line-height:1.32!important;letter-spacing:-.038em!important}
     .section-head{align-items:flex-end!important;gap:48px!important}
-    .section-head>p{font-size:14px!important;line-height:1.75!important;max-width:440px!important}
+    .section-head>p{font-size:15px!important;line-height:1.8!important;max-width:440px!important}
     .intro-statement,.thesis-statement{font-size:22px!important;font-weight:700!important;line-height:1.65!important;letter-spacing:-.03em!important}
-    .about-body>p:not(.intro-statement),.thesis-body>p:not(.thesis-statement){font-size:15px!important;line-height:1.9!important}
+    .about-body>p:not(.intro-statement),.thesis-body>p:not(.thesis-statement){font-size:16px!important;line-height:1.9!important}
 
     .about-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;margin-top:42px!important}
     .about-grid article{min-height:160px!important;padding:24px!important}
     .about-grid article>span{font-family:var(--ui-font)!important;font-size:12px!important;font-weight:750!important}
     .about-grid strong{margin:20px 0 9px!important;font-size:18px!important;font-weight:750!important;line-height:1.4!important}
-    .about-grid p{font-size:13px!important;line-height:1.75!important}
+    .about-grid p{font-size:15px!important;line-height:1.8!important}
 
     .research-grid{margin-top:42px!important}
     .research-axis{min-height:265px!important;padding:26px 28px!important}
     .research-axis>span{font-size:12px!important;font-weight:750!important}
     .research-axis h3{margin:28px 0 12px!important;font-size:var(--ui-h3)!important;font-weight:750!important;line-height:1.45!important;letter-spacing:-.028em!important}
-    .research-axis p{font-size:14px!important;line-height:1.82!important}
+    .research-axis p{font-size:15px!important;line-height:1.85!important}
 
     .project-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:14px!important;margin-top:42px!important}
     .project-card{min-height:390px!important;padding:28px!important}
     .project-card h3{margin:30px 0 9px!important;font-size:var(--ui-h3)!important;font-weight:750!important;line-height:1.45!important;letter-spacing:-.028em!important}
-    .project-card .project-subtitle{font-size:12px!important}
-    .project-card>p:not(.project-subtitle){font-size:13px!important;line-height:1.82!important}
+    .project-card .project-subtitle{font-size:13px!important;line-height:1.7!important}
+    .project-card>p:not(.project-subtitle){font-size:15px!important;line-height:1.85!important}
+    .project-tags span{font-size:13px!important}
 
     .method-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:12px!important;margin-top:30px!important}
     .method-grid article{min-height:190px!important;padding:22px!important}
     .method-grid strong{font-size:17px!important;font-weight:750!important;line-height:1.4!important}
-    .method-grid p{font-size:13px!important;line-height:1.8!important}
+    .method-grid p{font-size:15px!important;line-height:1.82!important}
+    .flow span,.lineage-flow span{font-size:14px!important;line-height:1.65!important}
 
     .matrix-grid{margin-top:38px!important}
     .matrix-grid h3{font-size:19px!important;font-weight:750!important;line-height:1.4!important}
-    .matrix-grid p{font-size:13px!important;line-height:1.8!important}
+    .matrix-grid p{font-size:15px!important;line-height:1.82!important}
 
     .archive-grid{margin-top:40px!important}
     .archive-card{min-height:285px!important;padding:28px!important}
     .archive-card h3{margin:28px 0 12px!important;font-size:var(--ui-h3)!important;font-weight:750!important;line-height:1.45!important;letter-spacing:-.028em!important}
-    .archive-card p{font-size:13px!important;line-height:1.82!important}
+    .archive-card p{font-size:15px!important;line-height:1.85!important}
+    .archive-card b{font-size:13px!important}
 
     .researcher-grid{grid-template-columns:390px minmax(0,1fr)!important;gap:64px!important}
     .researcher-name{font-size:20px!important;font-weight:750!important;line-height:1.4!important}
-    .researcher-lead{font-size:14px!important;line-height:1.9!important}
+    .researcher-lead{font-size:16px!important;line-height:1.9!important}
     .profile-list article{grid-template-columns:105px 1fr!important;gap:20px!important;padding:16px 0!important}
     .profile-list strong{font-size:14px!important;font-weight:750!important}
-    .profile-list span{font-size:13px!important;line-height:1.75!important}
+    .profile-list span{font-size:15px!important;line-height:1.8!important}
+    .standards-grid p{font-size:15px!important;line-height:1.85!important}
 
     @media(max-width:1080px){
       .project-grid{grid-template-columns:1fr 1fr!important}
@@ -130,6 +134,8 @@ navigation?.addEventListener('click', (event) => {
       .about-grid,.matrix-grid{grid-template-columns:1fr 1fr!important}
     }
     @media(max-width:680px){
+      :root{--ui-body:16px;--ui-small:14px}
+      body{font-size:16px!important;line-height:1.86!important}
       .wrap,.header-inner{width:min(100% - 32px,var(--ui-max))!important}
       .section{padding:68px 0!important}
       .hero{padding-top:122px!important}
@@ -143,6 +149,22 @@ navigation?.addEventListener('click', (event) => {
       .section-head{display:block!important}
       .section-head>p{margin-top:14px!important}
       .principle-line{grid-template-columns:1fr 1fr!important}
+      .lead{font-size:17px!important;line-height:1.88!important}
+      .hero-panel>p:last-child,
+      .section-head>p,
+      .about-body>p:not(.intro-statement),
+      .thesis-body>p:not(.thesis-statement),
+      .about-grid p,
+      .research-axis p,
+      .project-card>p:not(.project-subtitle),
+      .method-grid p,
+      .matrix-grid p,
+      .archive-card p,
+      .researcher-lead,
+      .profile-list span,
+      .standards-grid p{font-size:16px!important;line-height:1.84!important}
+      .principle-line span,.flow span,.lineage-flow span{font-size:14px!important;line-height:1.7!important}
+      .project-card .project-subtitle,.project-tags span,.archive-card b{font-size:14px!important}
     }
   `;
   document.head.appendChild(style);
