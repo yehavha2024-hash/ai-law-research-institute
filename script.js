@@ -13,18 +13,6 @@ navigation?.addEventListener('click', (event) => {
   }
 });
 
-const profileImage = document.querySelector('.researcher-visual img');
-if (profileImage) {
-  const source = 'https://raw.githubusercontent.com/yehavha2024-hash/ai-law-research-institute/master/images/researcher-profile.png';
-  profileImage.referrerPolicy = 'no-referrer';
-  profileImage.decoding = 'async';
-  profileImage.loading = 'eager';
-  profileImage.src = source;
-  profileImage.addEventListener('error', () => {
-    profileImage.src = `${source}?v=20260808`;
-  }, { once: true });
-}
-
 const stripTrailingPeriod = (element) => {
   const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
   let lastTextNode = null;
@@ -47,3 +35,31 @@ document.querySelectorAll('.outputs-grid article').forEach((article) => {
   badge.style.whiteSpace = 'nowrap';
   heading.appendChild(badge);
 });
+
+// 대표 연구자 영역은 프로필 이미지를 제거하고 이름을 제목과 같은 행에 배치합니다.
+const researcherSection = document.querySelector('.researcher-section');
+if (researcherSection) {
+  researcherSection.querySelector('.researcher-visual')?.remove();
+
+  const researcherGrid = researcherSection.querySelector('.researcher-grid');
+  if (researcherGrid) {
+    researcherGrid.style.display = 'block';
+  }
+
+  const heading = researcherSection.querySelector('h2');
+  const name = researcherSection.querySelector('.researcher-name');
+  if (heading && name) {
+    const inlineName = document.createElement('span');
+    inlineName.textContent = name.textContent.trim();
+    inlineName.setAttribute('aria-label', `대표 연구자 ${inlineName.textContent}`);
+    inlineName.style.marginLeft = '10px';
+    inlineName.style.paddingLeft = '10px';
+    inlineName.style.borderLeft = '1px solid rgba(255,255,255,.22)';
+    inlineName.style.fontSize = '.62em';
+    inlineName.style.fontWeight = '800';
+    inlineName.style.letterSpacing = '-.02em';
+    inlineName.style.whiteSpace = 'nowrap';
+    heading.appendChild(inlineName);
+    name.remove();
+  }
+}
