@@ -1,3 +1,9 @@
+const nexusStandard = document.createElement('link');
+nexusStandard.rel = 'stylesheet';
+nexusStandard.href = 'nexus-standard.css?v=20260808-2210';
+nexusStandard.dataset.nexusStandard = 'true';
+document.head.appendChild(nexusStandard);
+
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('#main-nav');
 
@@ -42,9 +48,7 @@ if (researcherSection) {
   researcherSection.querySelector('.researcher-visual')?.remove();
 
   const researcherGrid = researcherSection.querySelector('.researcher-grid');
-  if (researcherGrid) {
-    researcherGrid.style.display = 'block';
-  }
+  if (researcherGrid) researcherGrid.style.display = 'block';
 
   const heading = researcherSection.querySelector('h2');
   const name = researcherSection.querySelector('.researcher-name');
