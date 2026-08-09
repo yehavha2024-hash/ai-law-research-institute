@@ -24,16 +24,12 @@
     if (lastTextNode) lastTextNode.nodeValue = lastTextNode.nodeValue.replace(/[.。．]+(\s*)$/, '$1');
   };
 
-  document.querySelectorAll('h1,h2,h3,.focus-card strong').forEach(stripTrailingPeriod);
+  const enforceResearcherTextOnly = () => {
+    const researcherSection = document.querySelector('.researcher-section');
+    if (!researcherSection) return;
 
-  document.querySelectorAll('.outputs-grid article').forEach(article => {
-    const heading = article.querySelector('.card-head');
-    const badge = article.querySelector('.status-badge');
-    if (heading && badge) heading.appendChild(badge);
-  });
+    researcherSection.querySelectorAll('img,picture,.researcher-visual,.researcher-photo,.profile-image,[class*="portrait"]').forEach(node => node.remove());
 
-  const researcherSection = document.querySelector('.researcher-section');
-  if (researcherSection) {
     const heading = researcherSection.querySelector('h2');
     const name = researcherSection.querySelector('.researcher-name');
     if (heading && name && !heading.querySelector('.researcher-inline-name')) {
@@ -44,5 +40,26 @@
       heading.appendChild(inlineName);
       name.remove();
     }
-  }
+  };
+
+  const configureInternalNavigation = () => {
+    document.addEventListener('click', event => {
+      const topLink = event.target.closest('a[href="#top"]');
+      if (!topLink) return;
+      event.preventDefault();
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      history.replaceState(null, '', location.pathname + location.search);
+    });
+  };
+
+  document.querySelectorAll('h1,h2,h3,.focus-card strong').forEach(stripTrailingPeriod);
+
+  document.querySelectorAll('.outputs-grid article').forEach(article => {
+    const heading = article.querySelector('.card-head');
+    const badge = article.querySelector('.status-badge');
+    if (heading && badge) heading.appendChild(badge);
+  });
+
+  enforceResearcherTextOnly();
+  configureInternalNavigation();
 })();
