@@ -3,8 +3,14 @@ import path from 'node:path';
 
 const ROOT = process.cwd();
 const OUT = path.join(ROOT, 'dist');
-const files = ['index.html', 'style.css', 'script.js'];
-const directories = ['images'];
+const files = [
+  'index.html',
+  'style.css',
+  'nexus-standard.css',
+  'project-standard.css',
+  'script.js',
+  '_headers'
+];
 
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(OUT, { recursive: true });
@@ -15,20 +21,17 @@ for (const file of files) {
   fs.copyFileSync(source, path.join(OUT, file));
 }
 
-for (const directory of directories) {
-  const source = path.join(ROOT, directory);
-  if (!fs.existsSync(source)) throw new Error(`Missing deployment directory: ${directory}`);
-  fs.cpSync(source, path.join(OUT, directory), { recursive: true });
-}
-
 const index = fs.readFileSync(path.join(OUT, 'index.html'), 'utf8');
-for (const required of ['AI 법률연구소', 'style.css', 'script.js', 'images/researcher-profile.png']) {
+for (const required of ['AI 법률연구소', 'style.css', 'nexus-standard.css', 'project-standard.css', 'script.js']) {
   if (!index.includes(required)) throw new Error(`Deployment validation failed: ${required}`);
 }
 
-const profileImage = path.join(OUT, 'images', 'researcher-profile.png');
-if (!fs.existsSync(profileImage)) {
-  throw new Error('Deployment validation failed: researcher profile image was not copied');
+for (const forbidden of ['researcher-profile.png', 'researcher-visual', '<img', '<picture']) {
+  if (index.includes(forbidden)) throw new Error(`Deployment validation failed: forbidden researcher image reference ${forbidden}`);
 }
 
-console.log(`AI 법률연구소 Pages build complete: ${files.join(', ')}, ${directories.join(', ')}`);
+if (fs.existsSync(path.join(OUT, 'images'))) {
+  throw new Error('Deployment validation failed: images directory must not be deployed');
+}
+
+console.log(`AI 법률연구소 Pages build complete: ${files.join(', ')}`);
