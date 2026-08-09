@@ -8,6 +8,7 @@ on:
       - 'style.css'
       - 'nexus-standard.css'
       - 'project-standard.css'
+      - '_headers'
       - 'scripts/audit-architecture.mjs'
       - '.github/workflows/architecture-audit.yml'
   pull_request:
@@ -17,6 +18,7 @@ on:
       - 'style.css'
       - 'nexus-standard.css'
       - 'project-standard.css'
+      - '_headers'
       - 'scripts/audit-architecture.mjs'
 
 jobs:
