@@ -1,0 +1,43 @@
+name: Standardize AI law institute index once
+
+on:
+  push:
+    paths:
+      - '.github/workflows/standardize-index-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  standardize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+      - name: Normalize static index ownership
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace('<link rel="stylesheet" href="style.css" />', '<link rel="stylesheet" href="style.css?v=20260809-2026" />\n  <link rel="stylesheet" href="nexus-standard.css?v=20260809-2026" />\n  <link rel="stylesheet" href="project-standard.css?v=20260809-2026" />')
+          text = text.replace('<script src="script.js" defer></script>', '<script src="script.js?v=20260809-2026" defer></script>')
+          text = text.replace('https://yehavha-ai-foresight.pages.dev/', 'https://yehavha-ai-foresight-v2.pages.dev/')
+          old = '<footer class="site-footer"><div class="wrap footer-inner"><div><strong>AI 법률연구소</strong><p>AI Law · Responsibility · Agentic AI · Multi-Agent</p></div><div class="footer-meta"><p>Copyright © 이명훈 2026. All rights reserved.</p><p>문의 <a href="mailto:kimbrighth@gmail.com">kimbrighth@gmail.com</a></p><a href="#top">맨 위로 이동 ↑</a></div></div></footer>'
+          new = '<footer class="site-footer" data-footer-standard="v1"><div class="wrap footer-inner"><div><strong>AI 법률연구소</strong><p>AI Law · Responsibility · Agentic AI · Multi-Agent</p></div><div class="footer-meta"><p>Copyright © 이명훈 2026. All rights reserved.</p><p>문의 <a href="mailto:kimbrighth@gmail.com">kimbrighth@gmail.com</a></p><p class="ai-disclosure">AI 활용 안내: 일부 AI 법률 연구자료의 탐색·정리·초안 작성에 생성형 AI를 활용했으며, 법령·판례·기술자료의 확인과 연구방향·법적 분석·최종 편집은 운영자가 관리합니다. 본 사이트는 개별 법률자문을 제공하지 않습니다.</p><a href="#top">맨 위로 이동 ↑</a></div></div></footer>'
+          if old not in text:
+              raise SystemExit('Expected footer block not found')
+          text = text.replace(old, new, 1)
+          p.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit normalized index
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m "Standardize AI law institute HTML ownership"
+          git push origin master
