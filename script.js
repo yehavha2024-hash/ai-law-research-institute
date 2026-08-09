@@ -24,11 +24,11 @@
     if (lastTextNode) lastTextNode.nodeValue = lastTextNode.nodeValue.replace(/[.。．]+(\s*)$/, '$1');
   };
 
-  const enforceResearcherTextOnly = () => {
-    const researcherSection = document.querySelector('.researcher-section');
-    if (!researcherSection) return;
-
-    researcherSection.querySelectorAll('img,picture,.researcher-visual,.researcher-photo,.profile-image,[class*="portrait"]').forEach(node => node.remove());
+  const researcherSection = document.querySelector('#researcher');
+  if (researcherSection) {
+    researcherSection.querySelectorAll('img,picture,source,.researcher-visual,.researcher-photo,.profile-image,[class*="portrait"]').forEach(node => node.remove());
+    const grid = researcherSection.querySelector('.researcher-grid');
+    if (grid) grid.style.gridTemplateColumns = '1fr';
 
     const heading = researcherSection.querySelector('h2');
     const name = researcherSection.querySelector('.researcher-name');
@@ -40,17 +40,17 @@
       heading.appendChild(inlineName);
       name.remove();
     }
-  };
+  }
 
-  const configureInternalNavigation = () => {
-    document.addEventListener('click', event => {
-      const topLink = event.target.closest('a[href="#top"]');
-      if (!topLink) return;
+  document.querySelectorAll('a[href="#top"]').forEach(link => {
+    link.addEventListener('click', event => {
       event.preventDefault();
-      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-      history.replaceState(null, '', location.pathname + location.search);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+      history.replaceState(null, '', location.pathname + location.search + '#top');
     });
-  };
+  });
 
   document.querySelectorAll('h1,h2,h3,.focus-card strong').forEach(stripTrailingPeriod);
 
@@ -59,7 +59,4 @@
     const badge = article.querySelector('.status-badge');
     if (heading && badge) heading.appendChild(badge);
   });
-
-  enforceResearcherTextOnly();
-  configureInternalNavigation();
 })();
