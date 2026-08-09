@@ -1,0 +1,42 @@
+name: Remove researcher profile image once
+
+on:
+  push:
+    paths:
+      - '.github/workflows/remove-researcher-profile-once.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  remove-profile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 0
+      - name: Remove profile image markup
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          text = p.read_text(encoding='utf-8')
+          old = '<div class="researcher-visual"><img src="images/researcher-profile.png" alt="AI 법률연구소 대표 연구자 프로필" /></div>\n        '
+          if old in text:
+              text = text.replace(old, '', 1)
+          p.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit removal
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No markup change needed"
+            exit 0
+          fi
+          git commit -m "Remove researcher profile image markup"
+          git push origin master
