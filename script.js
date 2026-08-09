@@ -67,3 +67,15 @@ if (researcherSection) {
     name.remove();
   }
 }
+
+// 하단 문의 아래에 콘텐츠 성격에 맞는 AI 활용 안내를 표시합니다.
+const footerMeta = document.querySelector('.site-footer .footer-meta');
+if (footerMeta && !footerMeta.querySelector('.ai-disclosure')) {
+  const contact = footerMeta.querySelector('a[href^="mailto:"]')?.closest('p');
+  if (contact) {
+    const notice = document.createElement('p');
+    notice.className = 'ai-disclosure';
+    notice.textContent = 'AI 활용 안내: 일부 AI 법률 연구자료의 탐색·정리·초안 작성에 생성형 AI를 활용했으며, 법령·판례·기술자료의 확인과 연구방향·법적 분석·최종 편집은 운영자가 관리합니다. 본 사이트는 개별 법률자문을 제공하지 않습니다.';
+    contact.insertAdjacentElement('afterend', notice);
+  }
+}
