@@ -1,0 +1,32 @@
+name: Architecture Audit
+
+on:
+  push:
+    paths:
+      - 'index.html'
+      - 'script.js'
+      - 'style.css'
+      - 'nexus-standard.css'
+      - 'project-standard.css'
+      - 'scripts/audit-architecture.mjs'
+      - '.github/workflows/architecture-audit.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'script.js'
+      - 'style.css'
+      - 'nexus-standard.css'
+      - 'project-standard.css'
+      - 'scripts/audit-architecture.mjs'
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/audit-architecture.mjs
