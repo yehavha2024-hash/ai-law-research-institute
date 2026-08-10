@@ -1,5 +1,5 @@
 /* AI Law Institute theme layer
-   Responsibility: colors, readability, and the static award visual only. */
+   Responsibility: colors, readability, and researcher section styling. */
 :root{
   --ink:#f2f6ff;
   --muted:#d1dce8;
@@ -74,15 +74,26 @@ h1,h2,h3{color:var(--ink)}
 }
 
 .researcher-grid{grid-template-columns:1fr;max-width:920px}
-.researcher-name::after{
+.researcher-section h2{display:inline-flex;vertical-align:middle}
+.researcher-section .researcher-name{
+  display:inline-block;
+  margin:0 0 0 12px;
+  color:var(--ink);
+  font-size:clamp(1.7rem,3vw,2.35rem);
+  font-weight:800;
+  line-height:1.22;
+  letter-spacing:-.04em;
+  vertical-align:middle;
+}
+.researcher-lead::before{
   content:"";
   display:block;
-  width:min(100%,420px);
+  width:min(100%,520px);
   aspect-ratio:520/484;
   margin:18px 0 20px;
   border:1px solid var(--line);
   border-radius:12px;
-  background:#071626 url("award-master-thesis.png?v=20260810-1537") center/contain no-repeat;
+  background:#071626 url("award-master-thesis.png") center/contain no-repeat;
 }
 
 @media(max-width:680px){
@@ -104,4 +115,5 @@ h1,h2,h3{color:var(--ink)}
   .standards-grid p,
   .title-box p,
   .archive-grid p{font-size:16px;line-height:1.8}
+  .researcher-section .researcher-name{font-size:1.62rem}
 }
