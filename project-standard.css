@@ -86,24 +86,21 @@ h1,h2,h3{color:var(--ink)}
   vertical-align:middle;
 }
 .researcher-lead::before{
-  content:"석사학위기 수여식\A석사학위논문 우수논문상\A대표 수상자";
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  content:"◈  석사학위기 수여식\A석사학위논문 우수논문상\A대표 수상자";
+  display:block;
   width:min(100%,520px);
-  min-height:220px;
   box-sizing:border-box;
-  margin:18px 0 20px;
-  padding:34px 24px;
+  margin:14px 0 18px;
+  padding:18px 20px;
   border:1px solid var(--line);
   border-radius:12px;
   background:#081a30;
   color:var(--ink);
-  font-size:clamp(1.25rem,4vw,1.8rem);
+  font-size:clamp(1.2rem,2.5vw,1.55rem);
   font-weight:800;
-  line-height:1.55;
-  letter-spacing:-.03em;
-  text-align:center;
+  line-height:1.32;
+  letter-spacing:-.04em;
+  text-align:left;
   white-space:pre-line;
 }
 
