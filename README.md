@@ -1,38 +1,30 @@
 # AI 법률연구소
 
-AI 민사책임을 중심으로 Agentic AI·Multi-Agent Systems, 제조물책임, 증명위험, 책임배분, 피해회복과 제한적 법적 지위를 연구하는 독립 연구 사이트입니다.
+AI 민사책임, Agentic AI·Multi-Agent Systems, 제조물책임, 증명위험, 책임배분과 제한적 법적 지위를 연구하는 정적 연구 사이트입니다.
 
-## 정식 운영 원본
+## 운영 파일과 책임
 
-이 저장소의 루트 정적파일만 AI 법률연구소의 운영 원본으로 사용합니다.
+각 파일의 책임을 한 곳으로 고정합니다.
 
-- `index.html` — 연구소 페이지 구조와 연구내용
-- `style.css` — 공통 디자인과 반응형 스타일
-- `script.js` — 메뉴와 화면 보조 동작
-- `scripts/build-pages.mjs` — Cloudflare Pages용 정적 빌드
-- `images/` — 현재 페이지 빌드에 필요한 이미지 자산
-- `COPYRIGHT_STANDARD.md` — 저작권 표기 기준
+- `index.html` — 문서 구조와 연구내용
+- `style.css` — 기본 레이아웃과 컴포넌트
+- `nexus-standard.css` — Nexus 돌아가기 링크와 reduced-motion 규칙만 담당
+- `project-standard.css` — 색상·가독성 테마와 연구자 수상 이미지 표시만 담당
+- `script.js` — 모바일 메뉴 열기·닫기만 담당
+- `award-master-thesis.jpg` — 연구자 수상 이미지 단일 원본
+- `scripts/build-pages.mjs` — Cloudflare Pages용 정적 파일 복사
+- `COPYRIGHT_STANDARD.md` — 저작권 표기 문서이며 실행 코드에 관여하지 않음
 
-과거 수동배포본, ZIP 백업본, Next/Vinext·Workers·D1 시험 스캐폴드와 중복 법률지식 프로젝트는 운영 원본에서 제거했습니다. 새로운 수정은 위 정식 운영 파일에만 반영합니다.
+자바스크립트에서 이미지, 이름, CSS, 푸터 또는 레이아웃을 생성하거나 수정하지 않습니다.
 
-## Cloudflare Pages Git 연동
+## 이미지 교체 원칙
 
-- 운영주소: https://yehavha-ai-law-institute.pages.dev/
-- GitHub repository: `yehavha2024-hash/ai-law-research-institute`
+연구자 수상 이미지는 항상 `award-master-thesis.jpg` 한 파일만 사용합니다. 이후 이미지를 바꿀 때는 같은 파일명으로 이미지만 교체하며 HTML·CSS·JavaScript 로직을 추가하지 않습니다.
+
+## Cloudflare Pages
+
 - Production branch: `master`
-- Framework preset: `None`
-- Root directory: 빈칸
 - Build command: `node scripts/build-pages.mjs`
 - Build output directory: `dist`
-
-`package.json`은 외부 프레임워크 의존성 없이 위 정적 빌드 명령만 선언합니다.
-
-## Nexus 연결
-
-Nexus의 프로젝트 정보와 업데이트 추적은 이 저장소 내부의 별도 매니페스트가 아니라 `yehavha2024-hash/yehavha-site` 저장소의 루트 `nexus.project.json`에서 단일 관리합니다.
-
-- YEHAVHA Nexus: https://yehavha-nexus-hub.pages.dev/
-- 법리·판례 연구: https://yehavha-legal-knowledge.danielie.workers.dev
-- AI 법·기술 선제연구: https://yehavha-ai-foresight.pages.dev/
 
 Copyright © 이명훈 2026. All rights reserved.
