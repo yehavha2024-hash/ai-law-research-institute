@@ -73,6 +73,16 @@ h1,h2,h3{color:var(--ink)}
   color:#a9d0ff;
 }
 
+.outputs-grid article{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) max-content;
+  align-items:center;
+  column-gap:9px;
+}
+.outputs-grid article>.card-head{grid-column:1;grid-row:1}
+.outputs-grid article>.status-badge{grid-column:2;grid-row:1;margin:0;justify-self:start}
+.outputs-grid article>p{grid-column:1/-1}
+
 .researcher-grid{grid-template-columns:1fr;max-width:920px}
 .researcher-section h2{
   display:inline-flex;
