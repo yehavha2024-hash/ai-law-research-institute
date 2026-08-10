@@ -26,7 +26,6 @@
 
   const researcherSection = document.querySelector('#researcher');
   if (researcherSection) {
-    researcherSection.querySelectorAll('img,picture,source,.researcher-visual,.researcher-photo,.profile-image,[class*="portrait"]').forEach(node => node.remove());
     const grid = researcherSection.querySelector('.researcher-grid');
     if (grid) grid.style.gridTemplateColumns = '1fr';
 
@@ -39,6 +38,35 @@
       inlineName.setAttribute('aria-label', `대표 연구자 ${inlineName.textContent}`);
       heading.appendChild(inlineName);
       name.remove();
+    }
+
+    researcherSection.querySelectorAll('.researcher-award-visual').forEach(node => node.remove());
+    const currentHeading = researcherSection.querySelector('h2');
+    if (currentHeading) {
+      const figure = document.createElement('figure');
+      figure.className = 'researcher-award-visual';
+      figure.style.margin = '18px 0 20px';
+      figure.style.width = 'min(100%, 420px)';
+      figure.style.padding = '8px';
+      figure.style.border = '1px solid rgba(255,255,255,.16)';
+      figure.style.borderRadius = '14px';
+      figure.style.background = '#071626';
+      figure.style.boxShadow = '0 16px 36px rgba(0,0,0,.20)';
+
+      const awardImage = document.createElement('img');
+      awardImage.src = 'award-master-thesis.svg?v=20260810-1';
+      awardImage.alt = '석사학위기 수여식, 석사학위논문 우수논문상, 대표 수상자';
+      awardImage.loading = 'lazy';
+      awardImage.decoding = 'async';
+      awardImage.style.display = 'block';
+      awardImage.style.width = '100%';
+      awardImage.style.height = 'auto';
+      awardImage.style.aspectRatio = '1 / 1';
+      awardImage.style.objectFit = 'contain';
+      awardImage.style.borderRadius = '9px';
+
+      figure.appendChild(awardImage);
+      currentHeading.insertAdjacentElement('afterend', figure);
     }
   }
 
