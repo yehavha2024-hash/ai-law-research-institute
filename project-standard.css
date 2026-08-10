@@ -78,11 +78,11 @@ h1,h2,h3{color:var(--ink)}
   content:"";
   display:block;
   width:min(100%,420px);
-  aspect-ratio:1536/1429;
+  aspect-ratio:520/484;
   margin:18px 0 20px;
   border:1px solid var(--line);
   border-radius:12px;
-  background:#071626 url("award-master-thesis.jpg") center/contain no-repeat;
+  background:#071626 url("award-master-thesis.png?v=20260810-1537") center/contain no-repeat;
 }
 
 @media(max-width:680px){
