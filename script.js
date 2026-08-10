@@ -54,7 +54,15 @@
       figure.style.boxShadow = '0 16px 36px rgba(0,0,0,.20)';
 
       const awardImage = document.createElement('img');
-      awardImage.src = 'award-master-thesis.svg?v=20260810-2';
+      const localAwardSrc = 'award-master-thesis.svg?v=20260810-3';
+      const fallbackAwardSrc = 'https://raw.githubusercontent.com/yehavha2024-hash/ai-law-research-institute/master/award-master-thesis.svg?v=20260810-3';
+      awardImage.src = localAwardSrc;
+      awardImage.onerror = () => {
+        if (awardImage.src !== fallbackAwardSrc) {
+          awardImage.onerror = null;
+          awardImage.src = fallbackAwardSrc;
+        }
+      };
       awardImage.alt = '석사학위기 수여식, 석사학위논문 우수논문상, 대표 수상자';
       awardImage.loading = 'lazy';
       awardImage.decoding = 'async';
