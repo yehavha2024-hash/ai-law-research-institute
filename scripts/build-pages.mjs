@@ -9,6 +9,7 @@ const files = [
   'nexus-standard.css',
   'project-standard.css',
   'script.js',
+  'award-master-thesis.svg',
   '_headers'
 ];
 
@@ -28,6 +29,11 @@ for (const required of ['AI 법률연구소', 'style.css', 'nexus-standard.css',
 
 for (const forbidden of ['researcher-profile.png', 'researcher-visual', '<img', '<picture']) {
   if (index.includes(forbidden)) throw new Error(`Deployment validation failed: forbidden researcher image reference ${forbidden}`);
+}
+
+const awardAsset = path.join(OUT, 'award-master-thesis.svg');
+if (!fs.existsSync(awardAsset)) {
+  throw new Error('Deployment validation failed: award-master-thesis.svg was not copied');
 }
 
 if (fs.existsSync(path.join(OUT, 'images'))) {
