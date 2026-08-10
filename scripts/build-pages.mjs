@@ -9,7 +9,7 @@ const files = [
   'nexus-standard.css',
   'project-standard.css',
   'script.js',
-  'award-master-thesis.jpg',
+  'award-master-thesis.png',
   '_headers'
 ];
 
