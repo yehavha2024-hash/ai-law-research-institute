@@ -6,16 +6,11 @@ body{font-size:15px!important;line-height:1.75!important;letter-spacing:-.016em!
 .outputs-grid article .card-head{display:flex;align-items:center;gap:10px}
 .outputs-grid article .card-head .status-badge{margin-left:auto;flex:0 0 auto;white-space:nowrap}
 
-/* Researcher invariant: text-only, no portrait/image slot */
-.researcher-section img,
-.researcher-section picture,
-.researcher-section .researcher-visual,
-.researcher-section .researcher-photo,
-.researcher-section .profile-image,
-.researcher-section [class*="portrait"]{display:none!important}
+/* Researcher section */
 .researcher-section .researcher-grid{display:block!important;grid-template-columns:1fr!important;max-width:920px!important}
 .researcher-section .researcher-grid>div{width:100%!important;max-width:none!important}
 .researcher-inline-name{display:inline-block;margin-left:10px;padding-left:10px;border-left:1px solid rgba(255,255,255,.22);font-size:.62em;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.researcher-award-image{display:block!important;width:min(100%,420px)!important;height:auto!important;margin:18px 0 20px;border:1px solid rgba(255,255,255,.16);border-radius:12px;background:#071626}
 
 .site-header,.hero{background:linear-gradient(180deg,#081a30,#071225)!important;border-color:var(--nxs-line)!important}
 .section,.soft-section,.dark-section,.model-section,.researcher-section,.standards-section{background:transparent!important}
