@@ -54,14 +54,13 @@
       figure.style.boxShadow = '0 16px 36px rgba(0,0,0,.20)';
 
       const awardImage = document.createElement('img');
-      awardImage.src = 'award-master-thesis.svg?v=20260810-1';
+      awardImage.src = 'award-master-thesis.svg?v=20260810-2';
       awardImage.alt = '석사학위기 수여식, 석사학위논문 우수논문상, 대표 수상자';
       awardImage.loading = 'lazy';
       awardImage.decoding = 'async';
       awardImage.style.display = 'block';
       awardImage.style.width = '100%';
       awardImage.style.height = 'auto';
-      awardImage.style.aspectRatio = '1 / 1';
       awardImage.style.objectFit = 'contain';
       awardImage.style.borderRadius = '9px';
 
