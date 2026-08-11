@@ -73,6 +73,11 @@ h1,h2,h3{color:var(--ink)}
   color:#a9d0ff;
 }
 
+.path span{
+  background:rgba(122,184,255,.14);
+  color:#d9ebff;
+}
+
 .outputs-grid article>.card-head{
   display:inline-flex;
   vertical-align:middle;
