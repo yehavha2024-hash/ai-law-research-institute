@@ -105,8 +105,7 @@ h1,h2,h3{color:var(--ink)}
   letter-spacing:-.04em;
   vertical-align:middle;
 }
-.researcher-lead::before{
-  content:"★ 석사학위논문 우수논문상";
+.researcher-award{
   display:block;
   width:100%;
   max-width:760px;
@@ -146,8 +145,8 @@ h1,h2,h3{color:var(--ink)}
   .archive-grid p{font-size:16px;line-height:1.8}
   .researcher-section h2,
   .researcher-section .researcher-name{font-size:1.45rem}
-  .researcher-lead::before{
-    padding:10px 10px;
+  .researcher-award{
+    padding:10px;
     font-size:.72rem;
     letter-spacing:-.055em;
   }
