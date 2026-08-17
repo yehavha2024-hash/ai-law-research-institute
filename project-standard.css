@@ -1,35 +1,60 @@
 /* AI Law Institute theme layer
-   Responsibility: colors, readability, and researcher section styling. */
+   Responsibility: visual hierarchy, colors, readability, and spacing. */
 :root{
-  --ink:#f2f6ff;
-  --muted:#d1dce8;
-  --line:rgba(255,255,255,.16);
+  --ink:#eef4fb;
+  --muted:#c5d1dd;
+  --line:rgba(166,194,220,.18);
+  --line-strong:rgba(166,194,220,.26);
   --paper:#09182a;
   --soft:#0b1d33;
+  --panel:#0a1a2f;
+  --panel-soft:#0d223b;
   --accent:#7ab8ff;
   --accent-soft:rgba(122,184,255,.10);
   --shadow:none;
 }
 
 html,body{background:#071225;color:var(--ink)}
-body{font-size:16px;line-height:1.8}
+body{font-size:16px;line-height:1.68}
 
-.soft-section,.standards-section{background:#09182a}
-.section{border-color:rgba(255,255,255,.08)}
+.soft-section,.standards-section{background:var(--paper)}
+.dark-section,.model-section,.researcher-section{background:#081a30}
+.section{padding:38px 0;border-color:rgba(166,194,220,.09)}
+.section-head{gap:20px;margin-bottom:15px}
+.section-head h2,.researcher-section h2,.standards-grid h2{
+  color:var(--ink);
+  font-size:clamp(1.55rem,2.8vw,2rem);
+  line-height:1.24;
+}
+.eyebrow{margin-bottom:7px;font-size:10.5px;line-height:1.3}
+.ui-icon,.num{border-color:var(--line-strong)}
 
 .focus-card,
 .quad-grid article,
+.research-grid article,
 .feature-card,
 .title-box,
 .doctoral-grid article,
+.model-grid>article,
 .linkage-pair,
 .archive-grid a,
 .roadmap-grid article,
 .outputs-grid article{
-  background:rgba(8,18,38,.78);
+  background:var(--panel);
   border-color:var(--line);
   box-shadow:none;
 }
+
+.focus-card{padding:16px;border-radius:12px}
+.quad-grid article,
+.research-grid article,
+.doctoral-grid article,
+.roadmap-grid article,
+.outputs-grid article{padding:14px;border-radius:12px}
+.feature-card,.archive-grid a{padding:15px;border-radius:12px}
+.title-box{padding:14px 16px;border-radius:12px}
+.model-grid>article,.linkage-pair{border-radius:12px}
+.model-grid>article>div,.linkage-step{padding:14px}
 
 .lead,
 .section-head>p,
@@ -50,58 +75,61 @@ body{font-size:16px;line-height:1.8}
 .title-box p,
 .archive-grid p{
   color:var(--muted);
-  font-size:16px;
-  line-height:1.8;
+  font-size:15px;
+  line-height:1.65;
 }
 
-.title-box strong,
-.roadmap-block strong,
-.roadmap-output strong,
-.profile-list b,
-h1,h2,h3{color:var(--ink)}
+.lead{max-width:860px;line-height:1.68}
+.focus-card strong{margin:9px 0 6px;font-size:17px;line-height:1.45}
+.quad-grid h3,
+.research-grid h3,
+.doctoral-grid h3,
+.model-grid h3,
+.linkage-step strong,
+.roadmap-grid h3,
+.outputs-grid h3{
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.4;
+}
+.feature-card h3{margin:8px 0 6px;font-size:17px;line-height:1.4}
+.archive-grid h3{font-size:17px;line-height:1.4}
+.title-box strong{margin-top:5px;color:var(--ink);font-size:16px;line-height:1.45}
+
+.quad-grid p,.research-grid p,.doctoral-grid p,.model-grid p,.linkage-step p,.outputs-grid p{margin-top:6px}
+.feature-card p,.archive-grid p{line-height:1.65}
 
 .roadmap-output,.legend span{
-  background:#102f52;
+  background:var(--panel-soft);
   border-color:var(--line);
-  color:#eef5fc;
+  color:#e7f0f8;
 }
-.legend b{color:#f2f6ff}
+.roadmap-output{padding:10px 11px}
+.legend b{color:var(--ink)}
 
 .num,.status-badge,.phase-meta span{
-  background:rgba(122,184,255,.10);
-  border-color:rgba(122,184,255,.20);
+  background:var(--accent-soft);
+  border-color:rgba(122,184,255,.22);
   color:#a9d0ff;
 }
-
+.status-badge,.phase-meta span{font-size:10px}
 .path span{
-  background:rgba(122,184,255,.14);
+  background:rgba(122,184,255,.12);
   color:#d9ebff;
 }
 
-.outputs-grid article>.card-head{
-  display:inline-flex;
-  vertical-align:middle;
-}
-.outputs-grid article>.status-badge{
-  display:inline-block;
-  margin:0 0 0 12px;
-  vertical-align:middle;
-}
+.outputs-grid article>.card-head{display:inline-flex;vertical-align:middle}
+.outputs-grid article>.status-badge{display:inline-block;margin:0 0 0 10px;vertical-align:middle}
 
-.researcher-grid{grid-template-columns:1fr;max-width:920px}
-.researcher-section h2{
-  display:inline-flex;
-  vertical-align:middle;
-  font-size:clamp(1.45rem,2.3vw,1.8rem);
-  line-height:1.25;
-}
+.researcher-grid{grid-template-columns:1fr;max-width:920px;gap:18px}
+.researcher-section h2{display:inline-flex;vertical-align:middle}
 .researcher-section .researcher-name{
   display:inline-block;
-  margin:0 0 0 10px;
+  margin:0 0 0 9px;
   color:var(--ink);
-  font-size:clamp(1.45rem,2.3vw,1.8rem);
+  font-size:clamp(1.55rem,2.8vw,2rem);
   font-weight:800;
-  line-height:1.25;
+  line-height:1.24;
   letter-spacing:-.04em;
   vertical-align:middle;
 }
@@ -110,21 +138,39 @@ h1,h2,h3{color:var(--ink)}
   width:100%;
   max-width:760px;
   box-sizing:border-box;
-  margin:12px 0 16px;
-  padding:12px 16px;
+  margin:10px 0 13px;
+  padding:10px 14px;
   border:1px solid var(--line);
-  border-radius:12px;
-  background:#081a30;
+  border-radius:10px;
+  background:var(--panel);
   color:var(--ink);
-  font-size:clamp(.9rem,1.8vw,1.05rem);
+  font-size:clamp(.86rem,1.6vw,1rem);
   font-weight:800;
-  line-height:1.25;
-  letter-spacing:-.04em;
+  line-height:1.3;
+  letter-spacing:-.035em;
   text-align:left;
   white-space:nowrap;
 }
+.profile-list{margin-top:11px;border-color:var(--line)}
+.profile-list p{padding:8px 0;border-color:rgba(166,194,220,.10)}
+.contact-link{margin-top:11px;border-color:var(--line-strong)}
+
+.standards-grid{gap:24px}
+.standards-grid p{margin:0 0 9px;font-size:15px;line-height:1.65}
+.site-footer{padding:20px 0}
+.footer-inner p,.footer-meta a{font-size:11.5px;line-height:1.55}
 
 @media(max-width:680px){
+  body{font-size:15px;line-height:1.62}
+  .hero{padding:22px 0 27px}
+  .hero h1{font-size:2.15rem;line-height:1.06}
+  .hero h1 span{margin-top:10px}
+  .hero-actions{margin-top:16px}
+  .focus-card{padding:13px 14px}
+  .section{padding:27px 0}
+  .section-head{margin-bottom:11px}
+  .section-head h2,.researcher-section h2,.standards-grid h2{font-size:1.5rem;line-height:1.25}
+  .section-head>p{margin-top:6px}
   .lead,
   .section-head>p,
   .focus-card p,
@@ -142,24 +188,33 @@ h1,h2,h3{color:var(--ink)}
   .profile-list span,
   .standards-grid p,
   .title-box p,
-  .archive-grid p{font-size:16px;line-height:1.8}
-  .researcher-section h2,
-  .researcher-section .researcher-name{font-size:1.45rem}
-  .researcher-award{
-    padding:10px;
-    font-size:.72rem;
-    letter-spacing:-.055em;
-  }
-  .intro.section{padding:24px 0}
-  .intro .section-head{margin-bottom:10px}
-  .intro .quad-grid{gap:7px}
-  .intro .quad-grid article{padding:10px 12px}
-  .intro .quad-grid h3{font-size:16px;line-height:1.35}
-  .intro .quad-grid p{margin-top:5px;font-size:15px;line-height:1.55}
-  #research.section{padding:24px 0}
-  #research .section-head{margin-bottom:10px}
-  #research .section-head>p{margin-top:5px;line-height:1.55}
-  #research .research-grid{gap:7px}
-  #research .research-grid article{padding:11px 13px}
-  #research .research-grid p{margin-top:5px;line-height:1.55}
+  .archive-grid p{font-size:15px;line-height:1.6}
+  .focus-card strong{font-size:16px;line-height:1.4}
+  .quad-grid,.research-grid,.doctoral-grid,.roadmap-grid,.outputs-grid{gap:7px}
+  .quad-grid article,
+  .research-grid article,
+  .doctoral-grid article,
+  .feature-card,
+  .archive-grid a,
+  .roadmap-grid article,
+  .outputs-grid article{padding:11px 13px}
+  .quad-grid h3,
+  .research-grid h3,
+  .doctoral-grid h3,
+  .model-grid h3,
+  .linkage-step strong,
+  .roadmap-grid h3,
+  .outputs-grid h3{font-size:15.5px;line-height:1.38}
+  .feature-card h3,.archive-grid h3{font-size:16px}
+  .model-grid>article>div,.linkage-step{padding:12px}
+  .title-box{padding:12px 13px}
+  .title-box strong{font-size:15.5px}
+  .roadmap-output{margin-top:8px;padding:9px 10px}
+  .roadmap-block{margin-top:9px;padding-top:9px}
+  .roadmap-grid ul{margin-top:6px}
+  .researcher-section .researcher-name{font-size:1.5rem}
+  .researcher-award{margin:9px 0 12px;padding:9px 10px;font-size:.74rem;letter-spacing:-.045em}
+  .profile-list p{gap:3px;padding:7px 0}
+  .standards-grid{gap:16px}
+  .site-footer{padding:18px 0}
 }
