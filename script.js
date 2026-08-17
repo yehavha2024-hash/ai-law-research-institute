@@ -19,7 +19,7 @@
   if (researcherLead && !document.querySelector('.researcher-award')) {
     const award = document.createElement('p');
     award.className = 'researcher-award';
-    award.textContent = '★ 석사학위논문 우수논문상';
+    award.textContent = '★ 석사학위논문 우수논문상 수상';
     researcherLead.before(award);
   }
 })();
