@@ -151,4 +151,10 @@ h1,h2,h3{color:var(--ink)}
     font-size:.72rem;
     letter-spacing:-.055em;
   }
+  #research.section{padding:24px 0}
+  #research .section-head{margin-bottom:10px}
+  #research .section-head>p{margin-top:5px;line-height:1.55}
+  #research .research-grid{gap:7px}
+  #research .research-grid article{padding:11px 13px}
+  #research .research-grid p{margin-top:5px;line-height:1.55}
 }
