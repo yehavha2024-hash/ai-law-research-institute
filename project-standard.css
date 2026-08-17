@@ -150,6 +150,12 @@ h1,h2,h3{color:var(--ink)}
     font-size:.72rem;
     letter-spacing:-.055em;
   }
+  .intro.section{padding:24px 0}
+  .intro .section-head{margin-bottom:10px}
+  .intro .quad-grid{gap:7px}
+  .intro .quad-grid article{padding:10px 12px}
+  .intro .quad-grid h3{font-size:16px;line-height:1.35}
+  .intro .quad-grid p{margin-top:5px;font-size:15px;line-height:1.55}
   #research.section{padding:24px 0}
   #research .section-head{margin-bottom:10px}
   #research .section-head>p{margin-top:5px;line-height:1.55}
