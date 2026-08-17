@@ -106,7 +106,7 @@ h1,h2,h3{color:var(--ink)}
   vertical-align:middle;
 }
 .researcher-lead::before{
-  content:"★ 석사학위논문 우수논문상 · 석사학위기 수여식 대표 수상자";
+  content:"★ 석사학위논문 우수논문상";
   display:block;
   width:100%;
   max-width:760px;
