@@ -196,8 +196,68 @@ body{font-size:16px;line-height:1.68}
 
 .standards-grid{gap:24px}
 .standards-grid p{margin:0 0 9px;font-size:15px;line-height:1.65}
-.site-footer{padding:20px 0}
-.footer-inner p,.footer-meta a{font-size:11.5px;line-height:1.55}
+
+/* Nexus v2 footer: single-column, centered on desktop and mobile. */
+.site-footer{
+  padding:32px 0 34px;
+  background:#050b19;
+  border-top:1px solid rgba(255,255,255,.09);
+  color:#8fa1b3;
+  font-family:Pretendard,"Noto Sans KR","Apple SD Gothic Neo",system-ui,-apple-system,sans-serif;
+  text-align:center;
+}
+.footer-inner{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:flex-start;
+  gap:0;
+  text-align:center;
+}
+.footer-inner>div:first-child{
+  width:100%;
+  padding-bottom:14px;
+  margin-bottom:14px;
+  border-bottom:1px solid rgba(255,255,255,.09);
+}
+.footer-inner strong{
+  display:block;
+  color:#d7e1ea;
+  font-size:13px;
+  font-weight:600;
+  line-height:1.5;
+  letter-spacing:0;
+}
+.footer-inner>div:first-child p{
+  margin:3px 0 0;
+  color:#8fa1b3;
+  font-size:11px;
+  line-height:1.7;
+  letter-spacing:0;
+}
+.footer-meta{
+  width:100%;
+  max-width:920px;
+  text-align:center;
+}
+.footer-meta p{
+  margin:3px 0;
+  color:#8fa1b3;
+  font-size:12px;
+  line-height:1.7;
+  letter-spacing:0;
+}
+.footer-meta .footer-business{font-size:12px}
+.footer-meta .ai-disclosure{font-size:11.5px;line-height:1.7}
+.footer-meta a{
+  display:inline-block;
+  margin-top:3px;
+  color:#a9bfd2;
+  font-size:11px;
+  font-weight:600;
+  line-height:1.7;
+  letter-spacing:0;
+}
 
 @media(max-width:680px){
   body{font-size:15px;line-height:1.62}
@@ -258,5 +318,6 @@ body{font-size:16px;line-height:1.68}
   .researcher-award{margin:9px 0 12px;padding:9px 10px;font-size:.74rem;letter-spacing:-.045em}
   .profile-list p{gap:3px;padding:7px 0}
   .standards-grid{gap:16px}
-  .site-footer{padding:18px 0}
+  .site-footer{padding:32px 0 34px}
+  .footer-inner,.footer-meta{text-align:center}
 }
