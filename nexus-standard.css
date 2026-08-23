@@ -3,23 +3,18 @@
 .nexus-link{
   display:inline-flex;
   align-items:center;
-  min-height:34px;
+  min-height:36px;
   margin-bottom:18px;
-  padding:0 10px;
-  border:1px solid rgba(155,194,231,.20);
-  border-radius:8px;
-  background:rgba(255,255,255,.035);
-  color:#b8cce0;
-  font-size:11px;
+  padding:0 11px;
+  border:1px solid #cfd4dc;
+  border-radius:9px;
+  background:#ffffff;
+  color:#111111;
+  font-size:11.5px;
   font-weight:800;
-  letter-spacing:.07em;
+  letter-spacing:.05em;
   line-height:1;
 }
-.nexus-link:hover{
-  background:rgba(255,255,255,.07);
-  border-color:rgba(155,194,231,.34);
-}
-
-@media(prefers-reduced-motion:reduce){
-  *{scroll-behavior:auto;transition:none;animation:none}
-}
+.nexus-link:hover{background:#f7f9fc;border-color:#aeb8c5;color:#111111}
+.nexus-link:focus-visible{outline:2px solid rgba(50,109,168,.35);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none;animation:none}}
