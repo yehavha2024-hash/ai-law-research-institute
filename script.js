@@ -15,11 +15,4 @@
     menuButton?.setAttribute('aria-expanded', 'false');
   });
 
-  const researcherLead = document.querySelector('.researcher-lead');
-  if (researcherLead && !document.querySelector('.researcher-award')) {
-    const award = document.createElement('p');
-    award.className = 'researcher-award';
-    award.textContent = '★ 석사학위논문 논문우수상 수상';
-    researcherLead.before(award);
-  }
 })();
